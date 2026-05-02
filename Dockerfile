@@ -97,3 +97,6 @@ RUN NODE_OPTIONS="--max-old-space-size=2048" \
   && echo "done!"
 
 # yarn cache clean
+COPY --chown=docker:docker start.sh /usr/src/app/start.sh
+RUN chmod +x /usr/src/app/start.sh
+CMD ["/usr/src/app/start.sh"]
